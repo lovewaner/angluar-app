@@ -1,0 +1,67 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@import '../assets/appIcon/iconfont.css';
+
+// 生成app图标
+$appIcon: (
+    tasks: '\e998', 
+    messages: '\e635', 
+    works: '\e999', 
+    mine: '\e99a',
+    train: '\e605',
+    communication: '\e611',
+    mall: '\e65b',
+    party: '\e602',
+    pointOrder: '\e604',
+    carCheck: '\e625',
+    materielCheck: '\e850',
+    agentCheck: '\e6c3',
+    illegalHandle: '\e603'
+);
+@each $name, $content in $appIcon {
+    .ion-md-#{$name}:before,
+    .ion-ios-#{$name}:before,
+    .ion-ios-#{$name}-outline:before {
+        content: "#{$content}";
+    }
+}
+
+p{
+    margin: 0;
+}
+
+// 顶部导航栏
+.header-ios{
+    padding-top: 20px;
+}
+.toolbar {
+    box-shadow: 0px 3px 6px 0 rgba(65, 132, 255, 0.1);
+}
+.back-button-icon {
+    color: #212237;
+}
+
+// 底部tabs
+.tabs {
+    .tabbar,
+    .tab-button{
+        min-height: 44px;
+    }
+}
+
+// 文本域
+// .textarea{}
+// 列表
+// .list

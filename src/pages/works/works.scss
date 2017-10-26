@@ -1,0 +1,31 @@
+page-works {
+    $iconColor: (1: '#4184ff', 2: '#1de03b', 3: '#e76ad1', 4: '#fecc19', 5: '#44bffb', 6: '#32d6ae', 7: '#fc9971', 8: '#7a5ad3', 9: '#fe6262');
+    @each $head, $content in $iconColor {
+        .mb-icon-#{$head} {
+            color: #{$content}
+        }
+    }
+    ion-icon{
+        font-size: 40px;
+    }
+    .grid {
+        padding: 0;
+        .row {
+            text-align: center;
+            .mb-icon {
+                width: 34px;
+                height: 34px;
+            }
+
+            p{
+                font-size: 14px;
+                color: #707186;
+            }
+        }
+        .col{
+            padding: 30px 0;
+            border-right: 0.55px solid #dedede;
+            border-bottom: 0.55px solid #dedede;
+        }
+    }
+}
