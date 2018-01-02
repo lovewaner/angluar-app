@@ -1,0 +1,23 @@
+page-setting {
+    .scroll-content{
+        padding: 0!important;
+        background-color: #f6f7f9;
+    }
+    .list{
+        .item{
+            padding-left: 15px;
+            h2{
+                font-size: 14px;
+                color: #707186;
+                margin-top: 0!important;
+            }
+            span[item-end] {
+                font-size: 14px;
+                color: #3b3d71;
+            }
+            .button{
+                box-shadow: none;
+            }
+        }
+    }
+}

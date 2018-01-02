@@ -1,0 +1,60 @@
+page-map {
+    #container{
+        width: 100%;
+        height: 75%;
+        margin-top: -20px;
+    }
+    .scroll-content{
+        padding: 0!important;
+    }
+    .back{
+        position: absolute;
+        left: 15px;
+        top: 35px;
+        z-index: 1000;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+    }
+    .position{
+        position: absolute;
+        right: 15px;
+        bottom: 30%;
+        z-index: 1000;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+    }
+    .list {
+        >.item{
+            padding: 15px 0 15px 25px;
+        }
+        >.item:first-child {
+            border-top: none;
+        }
+        >.item:last-child {
+            border-bottom: none;
+        }
+        ion-avatar[item-start] {
+            min-width: 18px;
+            min-height: 18px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .mb-icon {
+                font-size: 18px;
+                color: #4184ff;
+            }
+        }
+        h2{
+            font-size: 16px;
+            color: #212237;
+            margin-top: 0!important;
+        }
+    }
+}

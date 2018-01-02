@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { MinePage } from './mine';
-import { MultiPickerModule } from 'ion-multi-picker';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 @NgModule({
   declarations: [
@@ -9,7 +9,7 @@ import { MultiPickerModule } from 'ion-multi-picker';
   ],
   imports: [
     IonicPageModule.forChild(MinePage),
-    MultiPickerModule
+    IonicImageViewerModule
   ],
 })
 export class MinePageModule {}

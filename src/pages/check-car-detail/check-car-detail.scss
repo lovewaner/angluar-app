@@ -1,0 +1,47 @@
+page-check-car-detail {
+    .scroll-content{
+        padding: 0 10px 10px;
+        .col{
+            .button{
+                margin-top: 0;
+            }
+        }
+    }
+    .list{
+        margin-bottom: 0;
+        >.item{
+            padding-left: 0;
+        }
+        >.item-checkbox{
+            font-size: inherit;
+            color: #3B3D71;
+            padding-left: 50px;
+        }
+        .item-inner{
+            padding: 10px 0;
+            border: none!important;
+        }
+    }
+    .radio-list {
+        .item {
+            max-width: 50%;
+        }
+    }
+    .remarks{
+        margin-top: 20px;
+    }
+    .button{
+        margin-top: 120px;
+        margin-bottom: 30px;
+    }
+    .button.hidden{
+        background: #4184ff;
+        color: #fff;
+    }
+    .ion-label-weight{
+        .label{
+            font-weight: 700;
+            color: #3B3D71;
+        }
+    }
+}

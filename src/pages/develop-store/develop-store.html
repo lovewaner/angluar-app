@@ -1,0 +1,87 @@
+<!--
+  Generated template for the DevelopStorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>新店开拓</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <section class="task-status-icon-view">
+    <section class="task-status-item" [class.task-status-active]="developStepNum >= 1">
+      <ion-icon name="checked" class="task-status-icon" *ngIf="developStepNum > 1"></ion-icon>
+      <strong class="task-status-num" *ngIf="developStepNum == 1">1</strong>
+      <p>首轮洽谈</p>
+    </section>
+    <section class="task-status-item" [class.task-status-active]="developStepNum >= 2">
+      <ion-icon name="checked" class="task-status-icon" *ngIf="developStepNum > 2"></ion-icon>
+      <strong class="task-status-num" *ngIf="developStepNum <= 2">2</strong>
+      <p>合同递交</p>
+    </section>
+    <section class="task-status-item" [class.task-status-active]="developStepNum >= 3">
+      <ion-icon name="checked" class="task-status-icon" *ngIf="developStepNum > 3"></ion-icon>
+      <strong class="task-status-num" *ngIf="developStepNum <= 3">3</strong>
+      <p>合同签订</p>
+    </section>
+    <section class="task-status-item" [class.task-status-active]="developStepNum >= 4">
+      <ion-icon name="checked" class="task-status-icon" *ngIf="developStepNum > 4"></ion-icon>
+      <strong class="task-status-num" *ngIf="developStepNum <= 4">4</strong>
+      <p>准备物料</p>
+    </section>
+  </section>
+
+  <ion-list *ngIf="developStepNum >= 1">
+    <button ion-item>
+      <ion-label>首轮洽谈</ion-label>
+    </button>
+    <button ion-item (tap)="loadModal('BranchSearchPage')">
+      <ion-label>{{ brand ? brand : "品牌选择" }}</ion-label>
+    </button>
+    <button ion-item (tap)="loadModal('DevelopStoreInformationPage', { data: storeInfo })">
+      <ion-label>基本信息</ion-label>
+    </button>
+    <button ion-item (tap)="loadModal('DevelopStoreDataPage', { data: storeData })">
+      <ion-label>数据收集</ion-label>
+    </button>
+    <ion-item>
+      <ion-label>单量预估</ion-label>
+      <ion-input [(ngModel)]="order" placeholder="请填写单量"></ion-input>
+    </ion-item>
+    <ion-textarea [(ngModel)]="discuss_remark" class="remarks" maxlength="200" placeholder="首轮洽谈备注"></ion-textarea>
+  </ion-list>
+
+  <ion-list *ngIf="developStepNum >= 2">
+    <button ion-item>
+      <ion-label>合同递交</ion-label>
+    </button>
+    <ion-item>
+      <ion-textarea [(ngModel)]="compact_remark" class="remarks" maxlength="200" placeholder="合同递交需录入4S店名"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="developStepNum >= 3">
+    <button ion-item>
+      <ion-label>合同签订</ion-label>
+    </button>
+    <ion-item>
+      <ion-textarea [(ngModel)]="sign_remark" class="remarks" maxlength="200" placeholder="合同签订需录入4S店名"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="developStepNum >= 4">
+    <button ion-item>
+      <ion-label>物料准备</ion-label>
+    </button>
+    <ion-item>
+      <ion-textarea [(ngModel)]="materials_remark" class="remarks" maxlength="200" placeholder="物料准备需录入4S店名"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (tap)="submit()" *ngIf="type == 1">提交</button>
+  <button ion-button block (tap)="update()" *ngIf="type == 2 && developStepNum <= 4">更新</button>
+</ion-content>

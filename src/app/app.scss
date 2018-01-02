@@ -12,56 +12,321 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-@import '../assets/appIcon/iconfont.css';
-
-// 生成app图标
-$appIcon: (
-    tasks: '\e998', 
-    messages: '\e635', 
-    works: '\e999', 
-    mine: '\e99a',
-    train: '\e605',
-    communication: '\e611',
-    mall: '\e65b',
-    party: '\e602',
-    pointOrder: '\e604',
-    carCheck: '\e625',
-    materielCheck: '\e850',
-    agentCheck: '\e6c3',
-    illegalHandle: '\e603'
-);
-@each $name, $content in $appIcon {
-    .ion-md-#{$name}:before,
-    .ion-ios-#{$name}:before,
-    .ion-ios-#{$name}-outline:before {
+@import '../assets/tabsIcon/iconfont.css';
+$appIcon: ( Task: '\e998', Message: '\e635', Work: '\e998', Mine: '\e99a', Train: '\e605', Communicate: '\e611', Shop: '\e65b', Party: '\e602', StayBilling: '\e604', checkCar: '\e625', Material: '\e850', ValetCar: '\e6c3', handling: '\e603', Phone: '\e660', QR: "\e687", arrow: '\e99b', position: '\e63e', camera: '\e645', moveCar: '\e613', warehouse: '\e636', setting: '\e647', store: "\e61f", open: "\e662", valuation: "\e610", face_normal: '\e620', face_excellent: '\e607', face_good: '\e652', checked: '\e997');
+@each $name , $content in $appIcon {
+    .ion-md-#{$name}::before,
+    .ion-ios-#{$name}::before,
+    .ion-ios-#{$name}-outline::before {
         content: "#{$content}";
     }
 }
-
 p{
     margin: 0;
 }
-
+// range样式
+.range-pin-fixed {
+    text-align: center;
+    border-radius: 2px;
+    padding: 5px;
+    transform: translate3d(0, 0, 0) scale(1);
+    position: relative;
+    top: -20px;
+    right: -5px;
+    margin: 0 !important;
+    z-index: 99;
+    display: inline-block;
+    min-width: 28px;
+    height: 28px;
+    font-size: 16px;
+    color: #fff;
+    background: #4184ff;
+    -webkit-transition: background-color 120ms ease, -webkit-transform 120ms ease;
+    transition: background-color 120ms ease, -webkit-transform 120ms ease;
+    transition: transform 120ms ease, background-color 120ms ease;
+    transition: transform 120ms ease, background-color 120ms ease, -webkit-transform 120ms ease;
+    &::before {
+        background-color: #4184ff;
+        left: 50%;
+        top: 2px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 0;
+        margin-left: -13px;
+        position: absolute;
+        z-index: -1;
+        width: 26px;
+        height: 26px;
+        content: "";
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}
+.range .range-bar {
+    height: 1px;
+}
+.range .range-pin {
+    border-radius: 2px;
+    padding: 5px;
+    transform: translate3d(0, 0, 0) scale(1);
+    &::before {
+        background-color: #4184ff;
+        left: 50%;
+        top: 2px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 0;
+        margin-left: -13px;
+        position: absolute;
+        z-index: -1;
+        width: 26px;
+        height: 26px;
+        content: "";
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}
+.range-ios.range-has-pin {
+    padding-top: 30px;
+}
+.range-ios .range-pin {
+    top: -30px;
+}
+.range-md .range-pin {
+    top: -25px;
+    &::before {
+        -webkit-transition: background-color 120ms ease;
+        transition: background-color 120ms ease;
+    }
+}
+.range .range-knob-pressed {
+    .range-pin {
+        background-color: #ff6b80;
+        &::before {
+            background-color: #ff6b80;
+        }
+    }
+}
+//人员选择
+.text-input {
+    font-size: 14px;
+    color: #707186;
+    margin-left: 0;
+}
+// 列表
+.list {
+    .item {
+        padding-left: 0;
+        ion-label {
+            font-size: 14px;
+            color: #707186;
+        }
+    }
+    >.item:first-child {
+        border-top: none;
+    }
+    >.item:last-child {
+        border-bottom: none;
+    }
+    .item-inner {
+        border-bottom: 0.55px solid #f6f7f9 !important;
+    }
+    h2 {
+        font-size: 14px;
+        color: #3b3d71;
+    }
+    .item.highlight {
+        ion-label {
+            color: #3b3d71;
+            font-weight: 600;
+        }
+    }
+}
+// picker
+.picker-md .picker-toolbar,
+.picker-ios .picker-toolbar {
+    justify-content: space-between;
+    .picker-toolbar-button {
+        display: flex;
+        justify-content: space-around;
+        flex: initial;
+    }
+    .picker-button {
+        width: auto;
+        box-shadow: none;
+    }
+}
+.ios ion-multi-picker,
+.md ion-multi-picker {
+    padding-left: 0;
+}
+.multi-picker-text,
+.multi-picker-placeholder {
+    font-size: 14px;
+}
+.multi-picker-placeholder {
+    color: #c4c6e2;
+}
+.multi-picker-text {
+    color: #3b3d71;
+    font-weight: 500;
+}
+// 标签按钮
+.label-group {
+    margin-bottom: 20px;
+    .button {
+        height: 34px;
+        width: 100%;
+        margin-top: 0;
+        font-size: 12px;
+        border-radius: 4px;
+        border-color: #c4c6e2;
+        color: #3d3b71;
+        box-shadow: none;
+    }
+    .button.activated {
+        border-color: #4184ff;
+        background-color: #4184ff;
+        color: #fff;
+    }
+}
+// 文本域
+.remarks {
+    width: 100%;
+    min-height: 82px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+    border: none;
+    border-radius: 4px;
+    background-color: #f6f7f9;
+    letter-spacing: 1px;
+}
+textarea.text-input{
+    min-height: 70px;
+    color: #3b3d71;
+}
+.button {
+    width: 69.3%;
+    margin: 0 auto;
+    box-shadow: 0px 5px 10px 0 rgba(65, 132, 255, 0.2);
+}
+//人员选择
+.select-text,.select-icon {
+    display: none;
+}
+.upload-img-wrap {
+    margin-top: 20px;
+    img,
+    .mb-icon {
+        display: inline-block;
+        width: 105px;
+        height: 105px;
+        border-radius: 4px;
+        margin: 5px;
+    }
+    .mb-icon {
+        text-align: center;
+        line-height: 105px;
+        background-color: #f6f7f9;
+        font-size: 36px;
+        color: #c4c6e2;
+    }
+}
 // 顶部导航栏
-.header-ios{
+.header-ios {
     padding-top: 20px;
 }
 .toolbar {
+    min-height: 48px!important;
     box-shadow: 0px 3px 6px 0 rgba(65, 132, 255, 0.1);
+}
+.toolbar-background-ios {
+    background-color: transparent;
 }
 .back-button-icon {
     color: #212237;
+}
+.bar-button[icon-only] .ion-ios-close {
+    font-size: 44px;
+}
+.toolbar-title{
+    font-size: 16px;
+}
+// 单选框列表
+.radio-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    ion-label {
+        font-size: 14px;
+        color: #707186;
+    }
+    .radio[item-start] {
+        margin-right: 10px;
+    }
+    .item {
+        max-width: 100px;
+    }
+}
+// picker
+.picker-md .picker-toolbar,
+.picker-ios .picker-toolbar {
+    justify-content: space-between;
+    .picker-toolbar-button {
+        display: flex;
+        justify-content: space-around;
+        flex: initial;
+    }
+    .picker-button {
+        width: auto;
+        box-shadow: none;
+    }
+}
+.multi-picker-text,
+.multi-picker-placeholder {
+    font-size: 14px;
+}
+.item-multi-picker .label-md {
+    color: #333;
+}
+.multi-picker-text {
+    color: #333;
+}
+.multi-picker-placeholder {
+    color: #C3C5C8;
+}
+
+// 图片预览
+image-viewer.ion-page {
+    .back-button-icon {
+        color: #fff;
+    }
 }
 
 // 底部tabs
 .tabs {
     .tabbar,
-    .tab-button{
+    .tab-button {
         min-height: 44px;
     }
 }
+// alert弹出层
+.alert-wrapper{
+    width: 320px;
+    max-width: 320px;
+    .alert-title{
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .alert-sub-title{
+        font-size: 14px;
+    }
+}
 
-// 文本域
-// .textarea{}
-// 列表
-// .list
+.scroll-content{
+    overflow: auto;
+}

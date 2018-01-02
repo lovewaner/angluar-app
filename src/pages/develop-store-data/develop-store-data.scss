@@ -1,0 +1,35 @@
+page-develop-store-data {
+    .scroll-content{
+        padding-top: 10px;
+    }
+    .list{
+        >.item{
+            padding-bottom: 10px;
+        }
+        .item-input .label{
+            font-size: 14px;
+            color: #9c9dc3;
+        }
+        .item-input-has-focus .label[floating]{
+            color: #9c9dc3;
+        }
+        ion-label.label{
+            font-size: 14px;
+            color: #9c9dc3;
+        }
+        .text-input{
+            font-size: 14px;
+            color: #3b3d71;
+            font-weight: 500;
+        }
+        .text-input-clear-icon{
+            box-shadow: none;
+        }
+    }
+    .button{
+        margin: 40px auto 30px;
+    }
+    .remarks{
+        margin: 15px 0;
+    }
+}

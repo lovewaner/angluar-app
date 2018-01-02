@@ -1,0 +1,25 @@
+page-talk-tree {
+    .scroll-content{
+        padding: 0!important;
+    }
+    .list{
+        margin-top: 15px;
+        >.item:first-child{
+            border-top: none;
+        }
+        >.item:last-child{
+            border-bottom: none;
+        }
+        .item-inner{
+            padding-left: 16px;
+            border-bottom-color: #f6f7f9 !important;
+            h2{
+                font-size: 14px;
+                color: #3b3d71;
+            }
+            h2:first-child{
+                margin: 0;
+            }
+        }
+    }
+}

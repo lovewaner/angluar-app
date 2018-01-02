@@ -1,0 +1,164 @@
+<!--
+  Generated template for the CheckCarDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>车辆巡检</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item>
+      <h2>内饰清洁</h2>
+    </button>
+  </ion-list>
+  <ion-list radio-group no-lines>
+    <ion-item class="ion-label-weight">
+      <ion-label>烟缸处理</ion-label>
+      <ion-checkbox item-end [checked]="upDateCleanCarFun('烟缸处理')" (ionChange)="clearCar($event, '烟缸处理', 'carOutClean')"></ion-checkbox>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>地毯清理</ion-label>
+      <ion-checkbox item-end [checked]="upDateCleanCarFun('地毯清理')" (ionChange)="clearCar($event, '地毯清理', 'carOutClean')"></ion-checkbox>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>座椅清理</ion-label>
+      <ion-checkbox item-end [checked]="upDateCleanCarFun('座椅清理')" (ionChange)="clearCar($event, '座椅清理', 'carOutClean')"></ion-checkbox>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>侧窗关闭</ion-label>
+      <ion-checkbox item-end [checked]="upDateCleanCarFun('侧窗关闭')" (ionChange)="clearCar($event, '侧窗关闭', 'carOutClean')"></ion-checkbox>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>天窗关闭</ion-label>
+      <ion-checkbox item-end [checked]="upDateCleanCarFun('天窗关闭')" (ionChange)="clearCar($event, '天窗关闭', 'carOutClean')"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <button ion-item>
+      <h2>外观清洁</h2>
+    </button>
+  </ion-list>
+  <ion-list radio-group no-lines>
+    <ion-item class="ion-label-weight">
+      <ion-label>清洗车辆</ion-label>
+      <ion-checkbox item-end [checked]="cleanInSide" (ionChange)="clearCar($event, '清洗车辆', 'CleanInCar')"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <button ion-item>
+      <h2>发动机车辆检查电瓶</h2>
+    </button>
+  </ion-list>
+  <ion-list class="radio-list" radio-group no-lines (ionChange)="onRadioChange($event, 'IsElectricity')">
+    <ion-item class="ion-label-weight">
+      <ion-label>正常蓄电</ion-label>
+      <ion-radio item-start value="正常蓄电" [checked]="IsElectricity"></ion-radio>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>馈电</ion-label>
+      <ion-radio item-start value="馈电" [checked]="!IsElectricity"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <button ion-item>
+      <h2>空调测试</h2>
+    </button>
+  </ion-list>
+  <ion-list class="radio-list" radio-group no-lines (ionChange)="onRadioChange($event, 'IsConditionerHot')">
+    <ion-item class="ion-label-weight">
+      <ion-label>正常制热</ion-label>
+      <ion-radio item-start value="正常制热" [checked]="IsConditionerHot"></ion-radio>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>不制热</ion-label>
+      <ion-radio item-start value="不制热" [checked]="!IsConditionerHot"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list class="radio-list" radio-group no-lines (ionChange)="onRadioChange($event, 'IsConditionerCold')">
+    <ion-item class="ion-label-weight">
+      <ion-label>正常制冷</ion-label>
+      <ion-radio item-start [checked]="IsConditionerCold" value="正常制冷"></ion-radio>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>不制冷</ion-label>
+      <ion-radio item-start [checked]="!IsConditionerCold" value="不制冷"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <button ion-item>
+      <h2>车辆外观油漆</h2>
+    </button>
+  </ion-list>
+  <ion-list class="radio-list" (ionChange)="onRadioChange($event, 'IsAppearance')" radio-group no-lines>
+    <ion-item class="ion-label-weight">
+      <ion-label>正常</ion-label>
+      <ion-radio item-start [checked]="IsAppearance" value="正常"></ion-radio>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>不正常</ion-label>
+      <ion-radio item-start [checked]="!IsAppearance" value="不正常"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <section class="upload-img-wrap" *ngIf="!IsAppearance">
+    <section class="upload-img-group">
+      <img *ngFor="let img of imgArrPaint" #BigImageToView [src]="adminImg(img)" alt="" (tap)="onClick(BigImageToView)" />
+    </section>
+    <ion-icon name="camera" class="mb-icon" (tap)="uploadAction('appearance')"></ion-icon>
+  </section>
+  <ion-textarea [(ngModel)]="appearanceRemarks" (ngModelChange)="onRemarksChange($event, 'appearance')" class="remarks" maxlength="200"
+    placeholder="车辆外观油漆备注" required (ionFocus)="SpecialNum = 1" [class.special]="SpecialNum === 1" (ionBlur)="SpecialNum = 0"></ion-textarea>
+  <ion-list>
+    <button ion-item>
+      <h2>轮胎检查</h2>
+    </button>
+  </ion-list>
+  <ion-list class="radio-list" (ionChange)="onRadioChange($event, 'IsTyre')" radio-group no-lines>
+    <ion-item class="ion-label-weight">
+      <ion-label>正常</ion-label>
+      <ion-radio item-start [checked]="IsTyre" value="正常"></ion-radio>
+    </ion-item>
+    <ion-item class="ion-label-weight">
+      <ion-label>不正常</ion-label>
+      <ion-radio item-start [checked]="!IsTyre" value="不正常"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <section class="label-group" *ngIf="!IsTyre">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+          <button [class.hidden]="!RT" ion-button outline (tap)="trpe('RT')">右前</button>
+        </ion-col>
+        <ion-col col-3>
+          <button [class.hidden]="!RH" ion-button outline (tap)="trpe('RH')">右后</button>
+        </ion-col>
+        <ion-col col-3>
+          <button [class.hidden]="!LT" ion-button outline (tap)="trpe('LT')">左前</button>
+        </ion-col>
+        <ion-col col-3>
+          <button [class.hidden]="!LH" ion-button outline (tap)="trpe('LH')">左后</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+  <section class="upload-img-wrap" *ngIf="!IsTyre">
+    <section class="upload-img-group">
+      <img *ngFor="let img of imgArrTyre" #BigImageToView [src]="adminImg(img)" alt="" (tap)="onClick(BigImageToView)" />
+    </section>
+    <ion-icon name="camera" class="mb-icon" (tap)="uploadAction('tyre')"></ion-icon>
+  </section>
+  <ion-textarea [(ngModel)]="tyreRemarks" (ngModelChange)="onRemarksChange($event, 'tyre')" class="remarks" maxlength="200"
+    placeholder="轮胎检查备注" required></ion-textarea>
+  <ion-textarea [(ngModel)]="otherRemarks" (ngModelChange)="onRemarksChange($event, 'other')" class="remarks" maxlength="200"
+    placeholder="其他" required></ion-textarea>
+    <button ion-button block (tap)="submit()" *ngIf="type == 1">提交</button>
+    <button ion-button block (tap)="update()" *ngIf="type == 2">更新</button>
+</ion-content>

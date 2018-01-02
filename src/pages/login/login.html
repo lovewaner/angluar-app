@@ -1,0 +1,31 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>登录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="Phone" item-start class="mb-icon"></ion-icon>
+      <ion-input type="number" placeholder="请输入手机号" [(ngModel)]="moblie" (keyup)="checkMoblie()"></ion-input>
+      <button ion-button small clear *ngIf="isSend" item-end class="getSMS" (tap)="getSMS()">获取验证码</button>
+      <button ion-button small clear *ngIf="!isSend" item-end class="getSMS">{{ sendTime }}秒后重新获取</button>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="QR" item-start class="mb-icon"></ion-icon>
+      <ion-input type="number" placeholder="请输入验证码" [(ngModel)]="code"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (tap)="login()">登录</button>
+</ion-content>

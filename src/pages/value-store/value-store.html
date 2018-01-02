@@ -1,0 +1,62 @@
+<!--
+  Generated template for the ValueStorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>4S店价值评估</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item [class.highlight]="store" (tap)="loadModal('SearchStorePage')">
+      <ion-label>{{store ? store.Store_Name : '选择门店'}}</ion-label>
+    </button>
+    <ion-item>
+      <h2>总经理与站长关系</h2>
+      <p>{{managerDesc}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-range min="0" max="100" [(ngModel)]="manager" pin="true" (ngModelChange)="onRangeChange('manager', $event)"></ion-range>
+      <section class="range-pin-fixed" item-end role="presentation">100</section>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <h2>服务顾问配合意愿</h2>
+      <p>{{waiterDesc}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-range min="0" max="100" [(ngModel)]="waiter" pin="true" (ngModelChange)="onRangeChange('waiter', $event)"></ion-range>
+      <section class="range-pin-fixed" item-end role="presentation">100</section>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <h2>进场台次</h2>
+      <p>{{displayDesc}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-range min="0" max="100" [(ngModel)]="display" pin="true" (ngModelChange)="onRangeChange('display', $event)"></ion-range>
+      <section class="range-pin-fixed" item-end role="presentation">100</section>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <h2>品牌层次及地段</h2>
+      <p>{{gradationDesc}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-range min="0" max="100" [(ngModel)]="gradation" pin="true" (ngModelChange)="onRangeChange('gradation', $event)"></ion-range>
+      <section class="range-pin-fixed" item-end role="presentation">100</section>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (tap)="submit()" *ngIf="type == 1">提交</button>
+  <button ion-button block (tap)="update()" *ngIf="type == 2">更新</button>
+</ion-content>

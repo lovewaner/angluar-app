@@ -1,0 +1,21 @@
+page-task-change {
+    .showList{
+        overflow-y: auto;
+        max-height: 85%;
+        text-align: center;
+    }
+    .label{
+        display: flex;
+        justify-content: space-between;
+        h2{
+            margin-top: 0!important;
+            line-height: 1.5;
+        }
+    }
+    p{
+        font-size: 12px;
+        color: #999;
+        text-align: right;
+        margin: 20px 10px 0 0;
+    }
+}

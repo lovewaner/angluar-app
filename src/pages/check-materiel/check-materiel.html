@@ -1,0 +1,42 @@
+<!--
+  Generated template for the CheckMaterielPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>物料巡检</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item (tap)="toPage('SearchStorePage')">
+        <ion-label>{{ store ? store.Store_Name : "选择门店" }}</ion-label>
+    </button>
+    <button ion-item>
+      <ion-label>台卡</ion-label>
+      <ion-multi-picker item-content [cancelText]="'取消'" [doneText]="'确定'" [multiPickerColumns]="cardPicker" [(ngModel)]="card"
+        (ionChange)="onPickerChange($event, 'card')" [placeholder]="'请选择数量'"></ion-multi-picker>
+    </button>
+    <button ion-item>
+      <ion-label>易拉宝</ion-label>
+      <ion-multi-picker item-content [cancelText]="'取消'" [doneText]="'确定'" [multiPickerColumns]="bannerPicker" [(ngModel)]="banner"
+        (ionChange)="onPickerChange($event, 'banner')" [placeholder]="'请选择数量'"></ion-multi-picker>
+    </button>
+    <button ion-item>
+      <ion-label>电子屏</ion-label>
+      <ion-multi-picker item-content [cancelText]="'取消'" [doneText]="'确定'" [multiPickerColumns]="screenPicker" [(ngModel)]="screen"
+        (ionChange)="onPickerChange($event, 'screen')" [placeholder]="'请选择数量'"></ion-multi-picker>
+    </button>
+  </ion-list>
+  
+  <ion-textarea [(ngModel)]="remarks" (ngModelChange)="onRemarksChange($event)" class="remarks" maxlength="200" placeholder="备注"></ion-textarea>
+
+  <button ion-button block (tap)="submit()" *ngIf="type == 1">提交</button>
+  <button ion-button block (tap)="update()" *ngIf="type == 2">更新</button>
+</ion-content>

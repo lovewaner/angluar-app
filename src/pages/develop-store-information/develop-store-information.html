@@ -1,0 +1,69 @@
+<!--
+  Generated template for the DevelopStoreInformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only (tap)="closePage()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>4S店基本信息</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>店名填写</ion-label>
+      <ion-input type="text" [(ngModel)]="store" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>地址填写</ion-label>
+      <ion-input type="text" [(ngModel)]="address" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>总经理姓名</ion-label>
+      <ion-input type="text" [(ngModel)]="manager_name" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>总经理电话</ion-label>
+      <ion-input type="text" [(ngModel)]="manager_mobile" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>站长姓名</ion-label>
+      <ion-input type="text" [(ngModel)]="station_name" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>站长电话</ion-label>
+      <ion-input type="text" [(ngModel)]="station_mobile" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>介绍人填写</ion-label>
+      <ion-input type="text" [(ngModel)]="introduce" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="font-size: 16px;color:#3b3d71;">与介绍人关系</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <section class="score-view">
+    <section class="score-view-item" (tap)="score('一般')">
+      <ion-icon name="face_normal" class="mb-icon" [class.mb-icon-active]="introduce_relation === '一般'"></ion-icon>
+      <span>一般</span>
+    </section>
+    <section class="score-view-item" (tap)="score('好')">
+      <ion-icon name="face_excellent" class="mb-icon" [class.mb-icon-active]="introduce_relation === '好'"></ion-icon>
+      <span>好</span>
+    </section>
+    <section class="score-view-item" (tap)="score('非常好')">
+      <ion-icon name="face_good" class="mb-icon" [class.mb-icon-active]="introduce_relation === '非常好'"></ion-icon>
+      <span>非常好</span>
+    </section>
+  </section>
+  <button ion-button block (tap)="confirm()">确定</button>
+</ion-content>

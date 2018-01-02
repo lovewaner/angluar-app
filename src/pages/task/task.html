@@ -1,0 +1,31 @@
+<!--
+  Generated template for the TaskPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>任务</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-calendar [(ngModel)]="date"
+                (onChange)="onChange($event)"
+                [type]="type"
+                [format]="'YYYY-MM-DD'"
+                [options]="optionsMulti"
+                (monthChange)="monthChange($event)">
+</ion-calendar>
+
+<ion-list class="task-list-view">
+  <button ion-item *ngFor="let item of taskList" (tap)="toPage(item.Link_Href, { taskID: item.Task_ID})">
+    <h2>{{ item.Task_Type }}</h2>
+    <span>{{ item.Addition_Date + ' ' + item.Addition_Time | timeago }}</span>
+  </button>
+</ion-list>
+</ion-content>

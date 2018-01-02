@@ -1,9 +1,84 @@
 page-mine {
-    .item{
-        padding-left: 0;
-        font-size: 14px!important;
-        .item-inner{
-            padding-right: 0!important;
+    .toolbar-title {
+        text-align: center;
+    }
+    .scroll-content{
+        background-color: #f6f7f9;
+        padding: 0!important;
+    }
+    .card{
+        width: 89.3%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0px 5px 10px 0 rgba(65, 132, 255, 0.1);
+        P{
+            font-size: 12px;
+            color: #707186;
+        }
+    }
+    .user-view{
+        min-height: 120px;
+        display: flex;
+        justify-content: space-between;
+        .user-info{
+            h2{
+                font-size: 20px;
+                color: #3b3d71;
+                line-height: 28px;
+            }
+            p{
+                font-size: 12px;
+                color: #707186;
+            }
+        }
+        .user-avatar{
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+        }
+        .default-img{
+            display: inline-block;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
+            border-radius: 50%;
+            background-color: #4184ff;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    .list{
+        ion-avatar[item-start]{
+            min-width: 18px;
+            min-height: 18px;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .mb-icon{
+                font-size: 18px;
+            }
+            .mb-icon-move{
+                color: #4184ff;
+            }
+            .mb-icon-house{
+                color: #48ce57;
+            }
+            .mb-icon-tasks{
+                color: #ff8282;
+            }
+            .mb-icon-setting{
+                color: #acbecd;
+            }
+        }
+        h2{
+            font-size: 14px;
+            color: #3b3d71;
+            margin-top: 3px!important;
         }
     }
 }

@@ -5,9 +5,9 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  tab1Root = 'TasksPage';
-  tab2Root = 'MessagesPage';
-  tab3Root = 'WorksPage';
+  tab1Root = 'TaskPage';
+  tab2Root = 'MessagePage';
+  tab3Root = 'WorkPage';
   tab4Root = 'MinePage';
 
   constructor() {

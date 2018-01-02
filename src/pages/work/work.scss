@@ -1,0 +1,73 @@
+page-work {
+    $iconColor: (1: '#4184ff', 2: '#1de03b', 3: '#e76ad1', 4: '#fecc19', 5: '#44bffb', 6: '#32d6ae', 7: '#fc9971', 8: '#7a5ad3', 9: '#fe6262', 10: '#8c9fff', 11: '#fea825', 12: '#1de03b', 13: '#d95ff6', 14: '#fc9971', 15: '#fe8181');
+    @each $head, $content in $iconColor {
+        .mb-icon-#{$head} {
+            color: #{$content}
+        }
+    }
+    .toolbar-title {
+        text-align: center;
+    }
+    .grid-maintain {
+        padding: 0;
+        .row {
+            text-align: left;
+            ion-icon {
+                font-size: 40px;
+            }
+            .mb-icon {
+                width: 40px;
+                height: 40px;
+            }
+            h2 {
+                margin-top: 30px;
+                margin-bottom: 5px;
+                font-size: 16px;
+                color: #3b3d71;
+            }
+            p {
+                font-size: 12px;
+                color: #707186;
+            }
+        }
+        .ion-col-box {
+            padding: 20px;
+            margin-right: 15px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0px 5px 10px 0 rgba(40, 132, 254, 0.05);
+        }
+    }
+    .grid-offline {
+        padding: 0;
+        .row {
+            text-align: center;
+            ion-icon {
+                font-size: 40px;
+            }
+            .mb-icon {
+                width: 40px;
+                height: 40px;
+            }
+            p {
+                font-size: 14px;
+                color: #707186;
+            }
+        }
+        .col {
+            padding: 30px 0;
+            border-right: 0.55px solid #f6f7f9;
+            border-bottom: 0.55px solid #f6f7f9;
+        }
+        .col:nth-child(3n){
+            border-right: none;
+        }
+    }
+    .content-maintain {
+        .scroll-content {
+            padding-top: 20px;
+            padding-left: 15px;
+            background-color: #f6f7f9;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<!--
+  Generated template for the PrepareStorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>开店准备</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item (tap)="loadModal('SearchStorePage')" [class.highlight]="store">
+      <ion-label>{{store ? store.Store_Name : '选择门店'}}</ion-label>
+    </button>
+    <button ion-item [class.highlight]="OUT_B || HU_B || HU_Commerce" (tap)="loadModal('PrepareStoreCarPage', { OUT_B: OUT_B, HU_B: HU_B, HU_Commerce: HU_Commerce })">
+      <ion-label>车辆需求</ion-label>
+    </button>
+    <button ion-item [class.highlight]="problem_selectWaiter && problem_remarks" (tap)="loadModal('PrepareStoreCommunicationPage', { type: 'problem', store: store, remarks: problem_remarks, waiter: problem_waiter, selectWaiter: problem_selectWaiter })">
+      <ion-label>问题沟通</ion-label>
+    </button>
+    <button ion-item [class.highlight]="activity_selectWaiter && activity_remarks" (tap)="loadModal('PrepareStoreCommunicationPage', { type: 'activity', store: store, remarks: activity_remarks, waiter: activity_waiter, selectWaiter: activity_selectWaiter })">
+      <ion-label>活动沟通</ion-label>
+    </button>
+  </ion-list>
+  <button ion-button block (tap)="submit()" *ngIf="type == 1">提交</button>
+  <button ion-button block (tap)="update()" *ngIf="type == 2">更新</button>
+</ion-content>

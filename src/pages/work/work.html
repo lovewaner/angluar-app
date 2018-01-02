@@ -1,0 +1,108 @@
+<!--
+  Generated template for the WorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>工作</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content [class.content-maintain]="workType == 2">
+  <ion-grid class="grid-offline" *ngIf="workType == 1">
+    <ion-row>
+      <ion-col col-4 (tap)="toPage('TrainTreePage')">
+        <ion-icon name="Train" class="mb-icon-1"></ion-icon>
+        <p>培训</p>
+      </ion-col>
+      <ion-col col-4 (tap)="toPage('TalkTreePage')">
+        <ion-icon name="Communicate" class="mb-icon-2"></ion-icon>
+        <p>交流</p>
+      </ion-col>
+      <ion-col col-4 (tap)="toPage('MallDistributionPage')">
+        <ion-icon name="Shop" class="mb-icon-3"></ion-icon>
+        <p>商城配送</p>
+      </ion-col>
+      <ion-col col-4 (tap)="toPage('PartyPage')">
+        <ion-icon name="Party" class="mb-icon-4"></ion-icon>
+        <p>餐饮小聚</p>
+      </ion-col>
+      <ion-col col-4 (tap)="toPage('PointOrderPage')">
+        <ion-icon name="StayBilling" class="mb-icon-5"></ion-icon>
+        <p>驻点开单</p>
+      </ion-col>
+      <ion-col col-4 (tap)="toPage('CheckCarPage')">
+        <ion-icon name="checkCar" class="mb-icon-6"></ion-icon>
+        <p>车辆巡检</p>
+      </ion-col>
+      <ion-col col-4 (tap)="toPage('CheckMaterielPage')">
+        <ion-icon name="Material" class="mb-icon-7"></ion-icon>
+        <p>物料巡检</p>
+      </ion-col>
+      <ion-col col-4 (tap)="loadModal('ValetCarPage')">
+        <ion-icon name="ValetCar" class="mb-icon-8"></ion-icon>
+        <p>代客验车</p>
+      </ion-col>
+      <ion-col col-4 (tap)="loadModal('ViolationHandingPage')">
+        <ion-icon name="handling" class="mb-icon-9"></ion-icon>
+        <p>协同违章处理</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="grid-maintain" *ngIf="workType == 2">
+    <ion-row>
+        <ion-col col-6 (tap)="toPage('DevelopStorePage')">
+            <section class="ion-col-box">
+                <ion-icon name="store" class="mb-icon mb-icon-10"></ion-icon>
+                <h2>新店开拓</h2>
+                <p>开拓收集新4s店信息</p>
+            </section>
+        </ion-col>
+        <ion-col col-6 (tap)="toPage('PrepareStorePage')">
+            <section class="ion-col-box">
+                <ion-icon name="open" class="mb-icon mb-icon-11"></ion-icon>
+                <h2>开店准备</h2>
+                <p>开店前车辆准备</p>
+            </section>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6 (tap)="toPage('TalkTreePage')">
+            <section class="ion-col-box">
+                <ion-icon name="Communicate" class="mb-icon mb-icon-12"></ion-icon>
+                <h2>交流</h2>
+                <p>与服务人员交流</p>
+            </section>
+        </ion-col>
+        <ion-col col-6 (tap)="toPage('ValueStorePage')">
+            <section class="ion-col-box">
+                <ion-icon name="valuation" class="mb-icon mb-icon-13"></ion-icon>
+                <h2>价值评估</h2>
+                <p>4s店价值评估表</p>
+            </section>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-6 (tap)="toPage('CheckMaterielPage')">
+            <section class="ion-col-box">
+                <ion-icon name="Material" class="mb-icon mb-icon-14"></ion-icon>
+                <h2>物料巡检</h2>
+                <p>公司物料检查</p>
+            </section>
+        </ion-col>
+        <ion-col col-6 (tap)="toPage('CheckCarPage')">
+            <section class="ion-col-box">
+                <ion-icon name="checkCar" class="mb-icon mb-icon-15"></ion-icon>
+                <h2>监督巡检</h2>
+                <p>巡检空闲车辆</p>
+            </section>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+</ion-content>

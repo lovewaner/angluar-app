@@ -1,0 +1,31 @@
+<!--
+  Generated template for the TrainTreePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>培训</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item (tap)="toPage('TrainProcessPage')">
+      <h2>操作流程培训</h2>
+    </button>
+    <button ion-item (tap)="toPage('TrainActivityPage')">
+      <h2>本店活动培训</h2>
+    </button>
+    <button ion-item (tap)="toPage('TrainIntegralPage')">
+      <h2>积分规则说明</h2>
+    </button>
+    <button ion-item (tap)="toPage('TrainMaterialPage')">
+      <h2>钥匙及材料交接</h2>
+    </button>
+  </ion-list>
+</ion-content>

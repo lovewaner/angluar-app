@@ -10,10 +10,8 @@ import {
   HttpResponse,
 } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
-
 @Injectable()
 export class CommonInterceptor implements HttpInterceptor {
-
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler

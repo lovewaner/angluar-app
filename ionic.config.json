@@ -1,6 +1,8 @@
 {
-  "name": "ionic-chezhentong-offline",
-  "app_id": "0dd3f3c8",
+  "name": "ionic-chezhentong-dps",
+  "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

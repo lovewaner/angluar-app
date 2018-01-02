@@ -1,0 +1,75 @@
+page-develop-store {
+    .task-status-icon-view {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px;
+        margin-bottom: 20px;
+        position: relative;
+        &:after {
+            position: absolute;
+            right: 62.5px;
+            top: 27px;
+            left: 62.5px;
+            height: 1px;
+            content: '';
+            z-index: 1;
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            background-color: #DDE4EB;
+        }
+        .task-status-num,
+        .task-status-icon {
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            border-radius: 50%;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+            margin-left: 5px;
+        }
+        .task-status-num {
+            display: block;
+            font-size: 18px;
+            background-color: #c3c5c8;
+        }
+        .task-status-icon {
+            font-size: 36px;
+        }
+        p {
+            line-height: 30px;
+            font-size: 12px;
+            color: #a1a4a7;
+        }
+        .task-status-active {
+            .task-status-icon{
+                color: #4184ff;
+            }
+            .task-status-num {
+                background-color: #4184ff;
+            }
+        }
+    }
+    .list {
+        margin-bottom: 20px;
+        .item {
+            padding-left: 0;
+            .item-inner{
+                box-shadow: none!important;
+                ion-label {
+                    color: #9c9dc3;
+                }
+            }
+        }
+        .item-input:last-child {
+            border-bottom: none;
+        }
+    }
+    .button {
+        margin-top: 30px;
+    }
+    .remarks{
+        margin: 15px 0;
+    }
+}

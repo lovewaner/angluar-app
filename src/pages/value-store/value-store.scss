@@ -1,0 +1,23 @@
+page-value-store {
+    .scroll-content{
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .list{
+        .item{
+            padding: 0 10px 0 20px;
+        }
+        .item-inner{
+            border-bottom: none !important;
+        }
+        h2{
+            font-size: 14px;
+            color: #61638a;
+            line-height: 26px;
+        }
+        p{
+            font-size: 16px;
+            color: #ff6b80;
+        }
+    }
+}

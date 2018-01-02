@@ -1,0 +1,58 @@
+page-develop-store-information {
+    .scroll-content{
+        padding-top: 10px;
+    }
+    .list{
+        >.item{
+            // padding-bottom: 10px;
+        }
+        .item-input .label{
+            font-size: 14px;
+            color: #9c9dc3;
+        }
+        .item-input-has-focus .label[floating]{
+            color: #9c9dc3;
+        }
+        .text-input{
+            font-size: 14px;
+            color: #3b3d71;
+            font-weight: 500;
+        }
+        .text-input-clear-icon{
+            box-shadow: none;
+        }
+        >.item:last-child{
+            .item-inner{
+                border-bottom: none!important;
+            }
+        }
+    }
+    .score-view{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+        margin-top: -15px;
+        .score-view-item{
+            display: flex;
+            align-items: center;
+            .mb-icon{
+                color: #e3e3eb;
+                font-size: 22px;
+            }
+            .mb-icon-active{
+                color: #4184ff;
+            }
+            span{
+                color: #3b3d71;
+                font-size: 14px;
+                font-weight: 500;
+                margin-left: 5px;
+            }
+        }
+    }
+    .button{
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+}
