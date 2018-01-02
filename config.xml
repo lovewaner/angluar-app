@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>车阵通</name>
-    <description>An car app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="com.chezhentong.dps" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>车阵通DPS</name>
+    <description>车阵通线下人员DPS系统</description>
+    <author email="qing474973903@163.com" href="http://www.chezhentong.com">Shanghai XinLin Network Technology Co.,Ltd.</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
